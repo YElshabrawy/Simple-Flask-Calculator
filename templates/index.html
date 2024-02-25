@@ -30,11 +30,14 @@
 							<label for="operation" class="block text-gray-700">Operation</label>
 							<select name="operation" id="operation"
 								class="w-full border-2 border-gray-300 p-2 rounded-lg focus:outline-none focus:border-blue-400"
-								required value="{{ operation }}">
-								<option value="add">Add ➕</option>
-								<option value="subtract">Subtract ➖</option>
-								<option value="multiply">Multiply ✖️</option>
-								<option value="divide">Divide ➗</option>
+								required>
+								<option {% if operation=='add' %} selected {% endif %} value="add">Add ➕</option>
+								<option {% if operation=='subtract' %} selected {% endif %} value="subtract">Subtract ➖
+								</option>
+								<option {% if operation=='multiply' %} selected {% endif %} value="multiply">Multiply ✖️
+								</option>
+								<option {% if operation=='divide' %} selected {% endif %} value="divide">Divide ➗
+								</option>
 							</select>
 						</div>
 						<div>

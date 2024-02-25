@@ -13,7 +13,10 @@ class Calculator:
         return a * b
 
     def divide(self, a, b):
-        return a / b
+        if b == 0:
+            return 'Error! Division by zero.'
+        else:
+            return a / b
 
 @app.route('/')
 def index():
