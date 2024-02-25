@@ -24,8 +24,20 @@ def index():
 
 @app.route('/calculate', methods=['POST'])
 def calculate():
-    a = int(request.form['first_number'])
-    b = int(request.form['second_number'])
+    try:
+        a = int(request.form['first_number'])
+    except ValueError:
+        try:
+            a = float(request.form['first_number'])
+        except ValueError:
+            a = 0
+    try:
+        b = int(request.form['second_number'])
+    except ValueError:
+        try:
+            b = float(request.form['second_number'])
+        except ValueError:
+            b = 0
     operation = request.form['operation']
     calculator = Calculator()
     if operation == 'add':
